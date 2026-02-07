@@ -1,0 +1,36 @@
+name: Fiscal_rule_toy
+
+variables:
+  - y: Output gap
+  - b: Public debt
+  - tau: Tax rate
+
+shocks:
+  - e_g: Government spending shock
+  - e_tau: Fiscal policy shock
+
+parameters:
+  rho_y: 0.6
+  rho_b: 0.85
+  gamma_tau: 0.2
+  rho_tau: 0.5
+  phi_b: 0.1
+
+equations:
+  - name: demand
+    expr: y = rho_y * y(-1) - gamma_tau * tau(-1) + e_g
+  - name: debt_accumulation
+    expr: b = rho_b * b(-1) + y - tau
+  - name: tax_rule
+    expr: tau = rho_tau * tau(-1) + phi_b * b(-1) + e_tau
+
+steady_state:
+  y: 0.0
+  b: 0.0
+  tau: 0.0
+
+shocks_config:
+  e_g:
+    stderr: 0.01
+  e_tau:
+    stderr: 0.01

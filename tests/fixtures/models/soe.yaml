@@ -1,0 +1,36 @@
+name: SOE_small_open
+
+variables:
+  - y: Output gap
+  - q: Real exchange rate
+  - nx: Net exports
+
+shocks:
+  - e_a: External demand shock
+  - e_q: Risk-premium shock
+
+parameters:
+  rho_y: 0.7
+  rho_q: 0.6
+  eta_q: 0.2
+  psi_q: 0.3
+  psi_y: 0.2
+
+equations:
+  - name: demand
+    expr: y = rho_y * y(-1) - eta_q * q(-1) + e_a
+  - name: exchange_rate
+    expr: q = rho_q * q(-1) + e_q
+  - name: net_exports
+    expr: nx = psi_q * q + psi_y * y
+
+steady_state:
+  y: 0.0
+  q: 0.0
+  nx: 0.0
+
+shocks_config:
+  e_a:
+    stderr: 0.01
+  e_q:
+    stderr: 0.01

@@ -1,0 +1,45 @@
+name: ZLB_toy_shadow_rate
+
+variables:
+  - x: Output gap
+  - pi: Inflation
+  - i_shadow: Shadow policy rate
+  - i: Effective policy rate
+
+shocks:
+  - e_d: Demand shock
+  - e_pi: Cost-push shock
+  - e_i: Monetary policy shock
+
+parameters:
+  rho_x: 0.6
+  beta: 0.5
+  kappa: 0.1
+  sigma: 0.4
+  rho_i: 0.8
+  phi_pi: 1.3
+  phi_x: 0.2
+
+equations:
+  - name: is_curve_backward
+    expr: x = rho_x * x(-1) - sigma * (i_shadow(-1) - pi(-1)) + e_d
+  - name: phillips_backward
+    expr: pi = beta * pi(-1) + kappa * x + e_pi
+  - name: shadow_rate_rule
+    expr: i_shadow = rho_i * i_shadow(-1) + (1 - rho_i) * (phi_pi * pi + phi_x * x) + e_i
+  - name: effective_rate_floor
+    expr: i = max(0.0, i_shadow)
+
+steady_state:
+  x: 0.0
+  pi: 0.0
+  i_shadow: 0.01
+  i: 0.01
+
+shocks_config:
+  e_d:
+    stderr: 0.01
+  e_pi:
+    stderr: 0.01
+  e_i:
+    stderr: 0.005

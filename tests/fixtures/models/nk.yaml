@@ -1,0 +1,40 @@
+name: NK3
+
+variables:
+  - x: Output gap
+  - pi: Inflation
+  - i: Nominal interest rate
+
+shocks:
+  - e_d: Demand shock
+  - e_s: Cost-push shock
+  - e_m: Monetary policy shock
+
+parameters:
+  sigma: 1.0
+  beta: 0.99
+  kappa: 0.1
+  phi_pi: 1.5
+  phi_x: 0.5
+  rho_i: 0.8
+
+equations:
+  - name: is_curve
+    expr: x = x(+1) - sigma * (i - pi(+1)) + e_d
+  - name: phillips
+    expr: pi = beta * pi(+1) + kappa * x + e_s
+  - name: taylor
+    expr: i = rho_i * i(-1) + (1 - rho_i) * (phi_pi * pi + phi_x * x) + e_m
+
+steady_state:
+  x: 0
+  pi: 0
+  i: 0
+
+shocks_config:
+  e_d:
+    stderr: 0.01
+  e_s:
+    stderr: 0.01
+  e_m:
+    stderr: 0.01

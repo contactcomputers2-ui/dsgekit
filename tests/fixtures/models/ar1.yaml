@@ -1,0 +1,21 @@
+name: AR1
+
+variables:
+  - y: Output
+
+shocks:
+  - e: Technology shock
+
+parameters:
+  rho: 0.9
+
+equations:
+  - name: ar1
+    expr: y = rho * y(-1) + e
+
+steady_state:
+  y: 0
+
+shocks_config:
+  e:
+    stderr: 0.01
