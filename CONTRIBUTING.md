@@ -42,6 +42,15 @@ Before opening a PR:
 4. Update docs/changelog when relevant.
 5. Fill the PR template clearly.
 
+## Originality and Provenance
+
+Contributions must be original work, or clearly identified third-party material with compatible licensing and attribution.
+
+- Do not copy source code from third-party repositories unless the license is compatible and attribution requirements are satisfied.
+- Do not paste substantial text from third-party manuals, docs, or tutorials into this repository.
+- If behavior is based on a public specification/manual, implement it independently and document assumptions in the PR description.
+- If you adapt external snippets, include exact provenance and license details in the PR.
+
 ## Development Setup
 
 ```bash
